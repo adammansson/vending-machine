@@ -1,5 +1,7 @@
 package vending.software;
 
+import vending.product.Product;
+
 public class Order {
 
     private double currentlyInserted;
@@ -17,16 +19,16 @@ public class Order {
         this.currentProduct = product;
     }
 
-    public boolean payed() {
-        return currentlyInserted >= currentProduct.cost();
+    public double remaining() {
+        return currentProduct.cost() - currentlyInserted;
     }
 
-    private void payForProduct() {
+    public void payForProduct() {
         currentlyInserted -= currentProduct.cost();
         currentProduct = null;
     }
 
-    public Product payedProduct() {
+    public Product dispenseProduct() {
         Product payedProduct = currentProduct;
         payForProduct();
         return payedProduct;

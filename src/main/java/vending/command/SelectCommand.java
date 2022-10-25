@@ -1,8 +1,11 @@
-package vending.software;
+package vending.command;
+
+import vending.product.Product;
+import vending.state.State;
 
 public class SelectCommand implements Command {
 
-    private Product product;
+    private final Product product;
 
     public SelectCommand(Product product) {
         this.product = product;

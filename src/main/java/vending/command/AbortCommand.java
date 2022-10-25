@@ -1,4 +1,6 @@
-package vending.software;
+package vending.command;
+
+import vending.state.State;
 
 public class AbortCommand implements Command {
     @Override

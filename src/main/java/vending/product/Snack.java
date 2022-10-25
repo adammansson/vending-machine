@@ -1,4 +1,4 @@
-package vending.software;
+package vending.product;
 
 public class Snack implements Product {
     @Override

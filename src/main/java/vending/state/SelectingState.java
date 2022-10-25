@@ -1,13 +1,18 @@
-package vending.software;
+package vending.state;
+
+import vending.product.Product;
+import vending.software.Order;
+import vending.software.VendingMachine;
 
 public class SelectingState implements State {
 
-    private VendingMachine machine;
-    private Order order;
+    private final VendingMachine machine;
+    private final Order order;
 
     public SelectingState(VendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
+        System.out.println("Please select product");
     }
 
     @Override
@@ -19,8 +24,8 @@ public class SelectingState implements State {
     @Override
     public void selectProduct(Product product) {
         order.selectProduct(product);
-        machine.setState(new PayingState(machine, order));
         System.out.printf("%s selected%n", product.name());
+        machine.setState(new DispenseState(machine, order));
     }
 
     @Override
@@ -30,7 +35,9 @@ public class SelectingState implements State {
 
     @Override
     public void abortOrder() {
-        machine.setState(new SelectingState(machine, order));
         System.out.println("Order aborted");
+        double change = order.getChange();
+        System.out.printf("You got %.2f in change%n", change);
+        machine.setState(new IdleState(machine, order));
     }
 }

@@ -4,26 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b26144b9-304a-44ce-be25-fde99422081e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/AbortCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/CommandFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/DispenseCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/IdleState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/InsertCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/PayingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/SelectCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/SelectingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/Snack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vending/software/VendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="b26144b9-304a-44ce-be25-fde99422081e" name="Changes" comment="Add basic functionality">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vending/command/CommandFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vending/command/CommandParseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vending/product/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vending/product/ProductParseException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/AbortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/command/AbortCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/CommandFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/DispenseCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/command/DispenseCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/product/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/IdleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/IdleState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/InsertCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/command/InsertCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/Inventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/software/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/PayingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/DispenseState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/SelectCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/command/SelectCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/SelectingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/SelectingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/Snack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/product/Snack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/software/VendingMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,18 +52,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2Ga40r6tMekCXwu7SuE9zBkvna5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="vending.software" />
@@ -95,8 +103,17 @@
       <option name="presentableId" value="Default" />
       <updated>1666613142993</updated>
       <workItem from="1666613144939" duration="94000" />
-      <workItem from="1666613245198" duration="11362000" />
+      <workItem from="1666613245198" duration="11559000" />
+      <workItem from="1666694787757" duration="4537000" />
     </task>
+    <task id="LOCAL-00001" summary="Add basic functionality">
+      <created>1666641589162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666641589162</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,5 +129,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add basic functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic functionality" />
   </component>
 </project>

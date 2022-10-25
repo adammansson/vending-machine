@@ -1,4 +1,4 @@
-package vending.software;
+package vending.product;
 
 public interface Product {
     double cost();

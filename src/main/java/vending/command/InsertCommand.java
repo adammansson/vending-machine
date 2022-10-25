@@ -1,8 +1,10 @@
-package vending.software;
+package vending.command;
+
+import vending.state.State;
 
 public class InsertCommand implements Command {
 
-    private double amount;
+    private final double amount;
     public InsertCommand(double amount) {
         this.amount = amount;
     }
