@@ -1,23 +1,29 @@
 package vending.software;
 
 import vending.command.Command;
-import vending.inventory.Inventory;
 import vending.state.IdleState;
 import vending.state.State;
 
 public class StandardVendingMachine implements VendingMachine {
 
     private State state;
-    private Inventory inventory;
+    private String status;
 
-    public StandardVendingMachine(Inventory inventory) {
+    public StandardVendingMachine() {
         Order order = new Order();
-        this.inventory = inventory;
         setState(new IdleState(this, order));
     }
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public void execute(Command command) {

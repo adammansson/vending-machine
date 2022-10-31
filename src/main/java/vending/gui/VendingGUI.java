@@ -1,9 +1,6 @@
 package vending.gui;
 
-import vending.command.AbortCommand;
-import vending.command.DispenseCommand;
-import vending.command.InsertCommand;
-import vending.command.SelectCommand;
+import vending.command.*;
 import vending.inventory.Inventory;
 import vending.inventory.ProductParseException;
 import vending.software.StandardVendingMachine;
@@ -14,44 +11,53 @@ import java.awt.*;
 
 public class VendingGUI extends JFrame {
 
+    VendingMachine machine = new StandardVendingMachine();
+    Display display = new Display(120);
+    Inventory inventory = new Inventory();
+
     public VendingGUI() {
         super("Vending machine");
+        initGUI();
+    }
 
-        Inventory inventory = new Inventory();
-        VendingMachine machine = new StandardVendingMachine(inventory);
-
-        Display display = new Display(120);
+    private void initGUI() {
         add(display, BorderLayout.NORTH);
 
-        Keypad keypad = new Keypad(4, 3, key -> display.setText(display.getText() + key.getText()));
+        Keypad keypad =
+                new Keypad(
+                        4,
+                        3,
+                        button -> display.setText(display.getText() + button.getText()),
+                        button -> display.setText(""));
         add(keypad, BorderLayout.SOUTH);
 
         JPanel buttonPanel = new JPanel();
         Button insertButton = new Button("Insert money", 120);
         insertButton.addActionListener(e -> {
-            Integer[] prices = {1, 5, 10, 20};
-            int n = (int) JOptionPane.showInputDialog(null, "Chose how much to insert: ",
+            Double[] prices = {1.0, 5.0, 10.0, 20.0};
+            Object res = JOptionPane.showInputDialog(null, "Choose how much to insert: ",
                 "Insert money", JOptionPane.QUESTION_MESSAGE, null, prices, prices[2]);
-            machine.execute(new InsertCommand(n));
+            double amount = (res == null ? 0.0 : (double) res);
+            execute(new InsertCommand(amount));
         });
         buttonPanel.add(insertButton);
 
         Button selectButton = new Button("Select product", 120);
         selectButton.addActionListener(e -> {
             try {
-                machine.execute(new SelectCommand(inventory.getProductById(display.getText())));
+                execute(new SelectCommand(inventory.getProductById(display.getText())));
             } catch (ProductParseException ex) {
-                throw new RuntimeException(ex);
+                display.setStatusText(ex.getMessage());
             }
         });
         buttonPanel.add(selectButton, BorderLayout.EAST);
 
         Button dispenseButton = new Button("Dispense", 120);
-        dispenseButton.addActionListener(e -> machine.execute(new DispenseCommand()));
+        dispenseButton.addActionListener(e -> execute(new DispenseCommand()));
         buttonPanel.add(dispenseButton);
 
         Button abortButton = new Button("Abort", 120);
-        abortButton.addActionListener(e -> machine.execute(new AbortCommand()));
+        abortButton.addActionListener(e -> execute(new AbortCommand()));
         buttonPanel.add(abortButton);
         add(buttonPanel);
 
@@ -59,5 +65,10 @@ public class VendingGUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
+    }
+
+    private void execute(Command command) {
+        machine.execute(command);
+        display.setStatusText(machine.getStatus());
     }
 }
