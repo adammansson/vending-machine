@@ -1,15 +1,15 @@
 package vending.state;
 
-import vending.product.Product;
+import vending.inventory.Product;
 import vending.software.Order;
-import vending.software.VendingMachine;
+import vending.software.StandardVendingMachine;
 
 public class DispenseState implements State {
 
-    private final VendingMachine machine;
+    private final StandardVendingMachine machine;
     private final Order order;
 
-    public DispenseState(VendingMachine machine, Order order) {
+    public DispenseState(StandardVendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
         System.out.println("Dispense product or insert the remaining money");
@@ -29,8 +29,9 @@ public class DispenseState implements State {
 
     @Override
     public void dispenseProduct() {
-        if (order.remaining() != 0) {
-            System.out.printf("Not enough money has been inserted, %.2f remaining%n", order.remaining());
+        double remaining = order.remaining();
+        if (remaining >= 0) {
+            System.out.printf("Not enough money has been inserted, %.2f remaining%n", remaining);
             return;
         }
         System.out.printf("%s has been dispensed%n", order.dispenseProduct().name());

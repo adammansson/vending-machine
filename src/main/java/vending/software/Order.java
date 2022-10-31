@@ -1,6 +1,6 @@
 package vending.software;
 
-import vending.product.Product;
+import vending.inventory.Product;
 
 public class Order {
 
@@ -20,11 +20,11 @@ public class Order {
     }
 
     public double remaining() {
-        return currentProduct.cost() - currentlyInserted;
+        return currentProduct.price() - currentlyInserted;
     }
 
     public void payForProduct() {
-        currentlyInserted -= currentProduct.cost();
+        currentlyInserted -= currentProduct.price();
         currentProduct = null;
     }
 

@@ -1,14 +1,14 @@
 package vending.state;
 
-import vending.product.Product;
+import vending.inventory.Product;
 import vending.software.Order;
-import vending.software.VendingMachine;
+import vending.software.StandardVendingMachine;
 
 public class IdleState implements State {
 
-    private final VendingMachine machine;
+    private final StandardVendingMachine machine;
     private final Order order;
-    public IdleState(VendingMachine machine, Order order) {
+    public IdleState(StandardVendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
         System.out.println("Please insert money");

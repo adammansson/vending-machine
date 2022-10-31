@@ -1,6 +1,6 @@
 package vending.state;
 
-import vending.product.Product;
+import vending.inventory.Product;
 
 public interface State {
     void insertMoney(double amount);

@@ -1,15 +1,15 @@
 package vending.state;
 
-import vending.product.Product;
+import vending.inventory.Product;
 import vending.software.Order;
-import vending.software.VendingMachine;
+import vending.software.StandardVendingMachine;
 
 public class SelectingState implements State {
 
-    private final VendingMachine machine;
+    private final StandardVendingMachine machine;
     private final Order order;
 
-    public SelectingState(VendingMachine machine, Order order) {
+    public SelectingState(StandardVendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
         System.out.println("Please select product");
