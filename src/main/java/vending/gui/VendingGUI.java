@@ -31,35 +31,28 @@ public class VendingGUI extends JFrame {
                         button -> display.setText(""));
         add(keypad, BorderLayout.SOUTH);
 
-        JPanel buttonPanel = new JPanel();
-        Button insertButton = new Button("Insert money", 120);
-        insertButton.addActionListener(e -> {
+        CommandPanel commandPanel = new CommandPanel(120);
+        add(commandPanel);
+
+        commandPanel.addButton("Insert money", e -> {
             Double[] prices = {1.0, 5.0, 10.0, 20.0};
             Object res = JOptionPane.showInputDialog(null, "Choose how much to insert: ",
                 "Insert money", JOptionPane.QUESTION_MESSAGE, null, prices, prices[2]);
             double amount = (res == null ? 0.0 : (double) res);
-            execute(new InsertCommand(amount));
+            executeCommand(new InsertCommand(amount));
         });
-        buttonPanel.add(insertButton);
 
-        Button selectButton = new Button("Select product", 120);
-        selectButton.addActionListener(e -> {
+        commandPanel.addButton("Select product", e -> {
             try {
-                execute(new SelectCommand(inventory.getProductById(display.getText())));
+                executeCommand(new SelectCommand(inventory.getProductById(display.getText())));
             } catch (ProductParseException ex) {
                 display.setStatusText(ex.getMessage());
             }
         });
-        buttonPanel.add(selectButton, BorderLayout.EAST);
 
-        Button dispenseButton = new Button("Dispense", 120);
-        dispenseButton.addActionListener(e -> execute(new DispenseCommand()));
-        buttonPanel.add(dispenseButton);
+        commandPanel.addButton("Dispense", e -> executeCommand(new DispenseCommand()));
 
-        Button abortButton = new Button("Abort", 120);
-        abortButton.addActionListener(e -> execute(new AbortCommand()));
-        buttonPanel.add(abortButton);
-        add(buttonPanel);
+        commandPanel.addButton("Abort", e -> executeCommand(new AbortCommand()));
 
         pack();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -67,7 +60,7 @@ public class VendingGUI extends JFrame {
         setVisible(true);
     }
 
-    private void execute(Command command) {
+    private void executeCommand(Command command) {
         machine.execute(command);
         display.setStatusText(machine.getStatus());
     }

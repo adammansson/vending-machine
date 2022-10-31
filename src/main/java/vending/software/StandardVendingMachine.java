@@ -10,8 +10,7 @@ public class StandardVendingMachine implements VendingMachine {
     private String status;
 
     public StandardVendingMachine() {
-        Order order = new Order();
-        setState(new IdleState(this, order));
+        setState(new IdleState(this, new Order()));
     }
 
     public void setState(State state) {

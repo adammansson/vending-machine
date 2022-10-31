@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b26144b9-304a-44ce-be25-fde99422081e" name="Changes" comment="Add GUI">
+    <list default="true" id="b26144b9-304a-44ce-be25-fde99422081e" name="Changes" comment="Add status display">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vending/gui/CommandPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/gui/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/gui/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/gui/Keypad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/gui/Keypad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vending/gui/VendingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/gui/VendingGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/StandardVendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/software/StandardVendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/software/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/software/VendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/state/DispenseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/DispenseState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/state/IdleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/IdleState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vending/state/SelectingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vending/state/SelectingState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Kotlin Data Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +90,7 @@
       <workItem from="1666694787757" duration="10303000" />
       <workItem from="1666896144614" duration="8214000" />
       <workItem from="1667207921891" duration="3582000" />
-      <workItem from="1667211516232" duration="6501000" />
+      <workItem from="1667211516232" duration="7920000" />
     </task>
     <task id="LOCAL-00001" summary="Add basic functionality">
       <created>1666641589162</created>
@@ -119,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667212687095</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add status display">
+      <created>1667233611978</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667233611978</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +141,7 @@
     <MESSAGE value="Add basic functionality" />
     <MESSAGE value="Refactor and some new functionality" />
     <MESSAGE value="Add GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GUI" />
+    <MESSAGE value="Add status display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add status display" />
   </component>
 </project>
