@@ -12,7 +12,7 @@ public class SelectingState implements State {
     public SelectingState(VendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
-        machine.setStatus("Please select product");
+//        machine.setStatus("Please select product");
     }
 
     @Override

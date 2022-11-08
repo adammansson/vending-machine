@@ -11,7 +11,7 @@ public class IdleState implements State {
     public IdleState(VendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
-        machine.setStatus("Please insert money");
+//        machine.setStatus("Please insert money");
     }
 
     @Override

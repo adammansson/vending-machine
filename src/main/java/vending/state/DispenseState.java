@@ -12,7 +12,7 @@ public class DispenseState implements State {
     public DispenseState(VendingMachine machine, Order order) {
         this.machine = machine;
         this.order = order;
-        machine.setStatus("Dispense product or insert the remaining money");
+//        machine.setStatus("Dispense product or insert the remaining money");
     }
 
     @Override

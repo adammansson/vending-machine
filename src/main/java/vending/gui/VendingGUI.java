@@ -3,7 +3,7 @@ package vending.gui;
 import vending.command.*;
 import vending.inventory.Inventory;
 import vending.inventory.ProductParseException;
-import vending.software.StandardVendingMachine;
+import vending.software.SnackVendingMachine;
 import vending.software.VendingMachine;
 
 import javax.swing.*;
@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class VendingGUI extends JFrame {
 
-    VendingMachine machine = new StandardVendingMachine();
+    VendingMachine machine = new SnackVendingMachine();
     Display display = new Display(120);
     Inventory inventory = new Inventory();
 
@@ -50,9 +50,15 @@ public class VendingGUI extends JFrame {
             }
         });
 
-        commandPanel.addButton("Dispense", e -> executeCommand(new DispenseCommand()));
+        commandPanel.addButton("Dispense", e -> {
+            executeCommand(new DispenseCommand());
+            display.setText("");
+        });
 
-        commandPanel.addButton("Abort", e -> executeCommand(new AbortCommand()));
+        commandPanel.addButton("Abort", e -> {
+            executeCommand(new AbortCommand());
+            display.setText("");
+        });
 
         pack();
         setDefaultCloseOperation(EXIT_ON_CLOSE);

@@ -4,12 +4,12 @@ import vending.command.Command;
 import vending.state.IdleState;
 import vending.state.State;
 
-public class StandardVendingMachine implements VendingMachine {
+public class SnackVendingMachine implements VendingMachine {
 
     private State state;
     private String status;
 
-    public StandardVendingMachine() {
+    public SnackVendingMachine() {
         setState(new IdleState(this, new Order()));
     }
 
