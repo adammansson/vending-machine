@@ -25,8 +25,6 @@ public class VendingGUI extends JFrame {
 
         Keypad keypad =
                 new Keypad(
-                        4,
-                        3,
                         button -> display.setText(display.getText() + button.getText()),
                         button -> display.setText(""));
         add(keypad, BorderLayout.SOUTH);

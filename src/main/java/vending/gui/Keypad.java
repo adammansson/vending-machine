@@ -8,16 +8,16 @@ public class Keypad extends JPanel {
     ButtonAction numberAction;
     ButtonAction clearAction;
 
-    public Keypad(int rows, int cols, ButtonAction numberAction, ButtonAction clearAction) {
-        super(new GridLayout(rows, cols, 2, 2));
+    public Keypad(ButtonAction numberAction, ButtonAction clearAction) {
+        super(new GridLayout(4, 3, 2, 2));
         this.numberAction = numberAction;
         this.clearAction = clearAction;
 
         for (int i = 1; i < 10; i++) {
             addNumberKey(i);
         }
-        addNumberKey(0);
         addClearKey("E");
+        addNumberKey(0);
         addClearKey("C");
     }
 
