@@ -30,7 +30,7 @@ public class DispenseState implements State {
     @Override
     public void dispenseProduct() {
         double remaining = order.remaining();
-        if (remaining >= 0) {
+        if (remaining > 0) {
             machine.setStatus(String.format("Not enough money has been inserted, %.2f remaining%n", remaining));
             return;
         }
